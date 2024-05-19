@@ -3,79 +3,60 @@
     <mat-form-field class="example-full-width">
       <mat-label>Nome</mat-label>
       <input
-        type="text"
-        (focus)="onFocusEvent()"
-        matInput
-        formControlName="username"
-        placeholder="Nome"
-        required
-      />
+        type="text" (focus)="onFocusEvent()" matInput formControlName="username" placeholder="Nome" required />
       <mat-error>
-        @if (form.get('username')?.hasError('required')){ O nome deve ser
-        obrigatório } @if (form.get('username')?.hasError('minlength')){ O Nome
-        deve ter no minimo 3 caracteres } @if
-        (form.get('username')?.hasError('maxlength')){ O Nome deve ter no máximo
-        50 caracteres }
+        @if (form.get('username')?.hasError('required')){ 
+          O nome deve ser  obrigatório
+        } 
+        @if (form.get('username')?.hasError('minlength')){ 
+          O Nome deve ter no minimo 3 caracteres 
+        }
+        @if(form.get('username')?.hasError('maxlength')){
+          O Nome deve ter no máximo 50 caracteres 
+        }
       </mat-error>
     </mat-form-field>
 
-    <mat-form-field class="example-full-width">
+    <mat-form-field>
       <mat-label>Email</mat-label>
       <input
-        type="text"
-        matInput
-        formControlName="email"
-        placeholder="Email"
-        required
-      />
-      <mat-error>
-        @if (form.get('email')?.hasError('required')){ O email deve ser
-        obrigatório } @if (form.get('email')?.hasError('email')){ O email deve ser
-        obrigatório }
+        type="text" matInput formControlName="email" placeholder="Email" required />
+      <mat-error>        
+        @if (form.get('email')?.hasError('required')){
+           O email deve ser
+        obrigatório } 
+        @if (form.get('email')?.hasError('email')){
+           O email deve ser obrigatório 
+        }
       </mat-error>
     </mat-form-field>
-   
-    <mat-form-field class="example-full-width">
+
+    <mat-form-field>
       <mat-label>Senha</mat-label>
       <input
-        type="text"
-        matInput
-        formControlName="password"
-        placeholder="Senha"
-        required
-      />
+        type="password" matInput formControlName="password" placeholder="Senha" required />
       <mat-error>
-        @if (form.get('password')?.hasError('required')){
-           a Senha deve ser obrigatório 
-        } 
+        @if (form.get('password')?.hasError('required')){ 
+          a Senha deve ser obrigatório 
+        }
       </mat-error>
     </mat-form-field>
-    <mat-form-field class="example-full-width">
+    <mat-form-field>
       <mat-label>Confirmação </mat-label>
       <input
-        type="text"
-        matInput
-        formControlName="confirmation"
-        placeholder="Confirmação de Senha"
-        required />
-     
+        type="password" matInput formControlName="confirmation" placeholder="Confirmação de Senha" required />
+      <mat-error>
+        @if (form.get('confirmation')?.hasError('invalidConfirmationPassword')) {
+          Necessário que a senha seja a mesma informada no campo senha 
+        } 
+        @if(form.get('confirmation')?.hasError('required')) {
+          a Senha deve ser obrigatório 
+        }
+      </mat-error>
     </mat-form-field>
-    <mat-error>
-      @if (form.get('confirmation')?.hasError('required')){
-         a Senha deve ser obrigatório 
-      } 
-      @if (form.getError('passwordMismatch')){
-        Necessário que a senha seja a mesma informada no campo senha
-     } 
-    </mat-error>
     <button
-      type="submit"
-      mat-raised-button
-      color="primary"
-      [disabled]="form.invalid">
+      type="submit" mat-raised-button color="primary" [disabled]="form.invalid">
       Salvar
     </button>
   </div>
 </form>
-
-

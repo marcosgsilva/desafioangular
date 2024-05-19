@@ -61,11 +61,12 @@ export class CreateComponent {
 
 
 export const passwordMatchValidator: ValidatorFn = (control: AbstractControl): ValidationErrors | null => {
-  console.log(control.getError('passwordMismatch'))
+  console.log(control)
 
-  const password = control.get('password')?.value;
-  const confirmation = control.get('confirmation')?.value;
-  if (password && confirmation && password !== confirmation) {
+  const password = control.get('password');
+  const confirmation = control.get('confirmation');
+  if (password?.value && confirmation?.value && password.value !== confirmation.value) {
+    confirmation.setErrors({'invalidConfirmationPassword': true})
     return { passwordMismatch: true };
   }
 
