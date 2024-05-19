@@ -1,5 +1,5 @@
 # For create project with NPX widthout NPM
-npx -p @angular/cli@17 ng new product-store --skip-tests
+npx -p @angular/cli@17 ng new cadastro-usuarios --skip-tests
 
 # For to integrate material with Angular was need install them
 npx ng add @angular/material 

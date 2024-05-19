@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "product-store": {
+    "cadatro-usuarios": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -39,7 +39,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/product-store",
+            "outputPath": "dist/cadatro-usuarios",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -85,10 +85,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "product-store:build:production"
+              "buildTarget": "cadatro-usuarios:build:production"
             },
             "development": {
-              "buildTarget": "product-store:build:development"
+              "buildTarget": "cadatro-usuarios:build:development"
             }
           },
           "options": {
@@ -100,7 +100,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "product-store:build"
+            "buildTarget": "cadatro-usuarios:build"
           }
         },
         "test": {

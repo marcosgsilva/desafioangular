@@ -3,8 +3,9 @@ import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { MAT_SNACK_BAR_DEFAULT_OPTIONS, MatSnackBarConfig } from '@angular/material/snack-bar';
+import { httpErrorInterceptor } from './shared/interceptors/http-error-interceptor';
 
 
 const SNACK_BAR_CONFIG: ValueProvider =
@@ -19,9 +20,12 @@ const SNACK_BAR_CONFIG: ValueProvider =
 
 export const appConfig: ApplicationConfig = {
   providers: [
+    provideHttpClient(withInterceptors(
+      [httpErrorInterceptor]
+  )),
     provideRouter(routes),
     provideAnimationsAsync(),
-    provideHttpClient(),
+
     SNACK_BAR_CONFIG
   ]
 };

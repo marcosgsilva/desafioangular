@@ -11,11 +11,11 @@ export class ProductsService {
   httpClient = inject(HttpClient)
 
   getAll() {
-    return this.httpClient.get<Product[]>('/api/products');
+    return this.httpClient.get<Product[]>('/api/usuarios');
   }
 
   post(playload: ProductPlayload) {
-    return this.httpClient.post('/api/products', playload);
+    return this.httpClient.post('/api/usuarios', playload)
   }
 
 }
