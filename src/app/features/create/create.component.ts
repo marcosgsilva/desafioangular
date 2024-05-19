@@ -34,11 +34,7 @@ export class CreateComponent {
       title: this.form.controls.title.value
     })
       .subscribe(() => {
-        this.matSackBar.open('Produto Criado com sucesso', 'Ok', {
-          duration: 3000,
-          horizontalPosition: 'right',
-          verticalPosition: 'top'
-        });
+        this.matSackBar.open('Produto Criado com sucesso', 'Ok');
         this.router.navigateByUrl('/');
       })
   }
