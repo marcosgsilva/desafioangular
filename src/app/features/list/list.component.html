@@ -1,9 +1,9 @@
 <div class="action-container">
-  <a mat-raised-button color="primary" [routerLink]="['/create-product']">
-    Criar Produto
+  <a mat-raised-button color="primary" [routerLink]="['/create-user']">
+    Criar Usuário
   </a>
 </div>
 
-@for(product of products; track product.id){
-<app-card [product]="product"></app-card>
+@for(user of user; track user.id){
+<app-card [user]="user"></app-card>
 }

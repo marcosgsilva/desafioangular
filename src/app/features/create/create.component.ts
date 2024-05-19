@@ -4,7 +4,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { ProductsService } from '../../shared/services/products.service';
+import { UserService } from '../../shared/services/user.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -16,7 +16,7 @@ import { Router } from '@angular/router';
 })
 export class CreateComponent {
 
-  productService = inject(ProductsService);
+  userService = inject(UserService);
   matSackBar = inject(MatSnackBar);
   router = inject(Router);
   focusSupported: boolean = false;
@@ -27,11 +27,10 @@ export class CreateComponent {
 
   ngOnInit(): void {
     this.form = this.fb.group({
-      username: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(50)]],
+      name: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(50)]],
       email: ['', [Validators.required, Validators.email]],
-
       password: ['', [Validators.required]],
-      confirmation: ['', [Validators.required]]
+      confirmationPassword: ['', [Validators.required]]
     }, { validators: passwordMatchValidator });
   }
 
@@ -44,11 +43,14 @@ export class CreateComponent {
   onSubmit() {
     if (this.form.valid) {
       this.focusSupported = true;
-      this.productService.post({
-        title: this.form.get('username')?.value
+      this.userService.post({
+        name: this.form.get('name')?.value,
+        email: this.form.get('email')?.value,
+        password: this.form.get('password')?.value,
+        confirmationPassword: this.form.get('confirmationPassword')?.value
       })
         .subscribe(() => {
-          this.matSackBar.open('Produto Criado com sucesso', 'Ok');
+          this.matSackBar.open('Usuário Criado com sucesso', 'Ok');
           this.router.navigateByUrl('/');
         })
     }
@@ -58,15 +60,11 @@ export class CreateComponent {
 }
 
 
-
-
 export const passwordMatchValidator: ValidatorFn = (control: AbstractControl): ValidationErrors | null => {
-  console.log(control)
-
   const password = control.get('password');
-  const confirmation = control.get('confirmation');
+  const confirmation = control.get('confirmationPassword');
   if (password?.value && confirmation?.value && password.value !== confirmation.value) {
-    confirmation.setErrors({'invalidConfirmationPassword': true})
+    confirmation.setErrors({ 'invalidConfirmationPassword': true })
     return { passwordMismatch: true };
   }
 
