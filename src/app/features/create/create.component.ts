@@ -29,7 +29,7 @@ export class CreateComponent {
     this.form = this.fb.group({
       name: ['', [ Validators.required, Validators.minLength(3), Validators.maxLength(50) ]],
       email: ['', [ Validators.required, Validators.email]],
-      password: ['', [ Validators.required, Validators.minLength(3), Validators.maxLength(50) ]],
+      password: ['', [ Validators.required, Validators.minLength(6), Validators.maxLength(20) ]],
       confirmationPassword: ['', [ Validators.required ]]
     }, { validators: passwordMatchValidator });
   }
