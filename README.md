@@ -49,17 +49,16 @@ Rodar dentro do projeto: npm i
 3. Utilizar o VSCode ou qualquer outra IDE para desenvolvimento.
 
 ## Uso
-1. 
+1. Rodar a aplicação
 
 ```
    npx ng serve
 ```
-3. Tenha o insomnia instalado na sua máquina.
-4. Para abrir o Navegador
+2. Para abrir o Navegador
  ```
    http://localhost:4200
 ```
 
+Segue resultado da tela de Cadastro
 
-
-![Captura de tela de 2024-05-20 12-57-01](https://github.com/marcosgsilva/desafiospringboot/assets/12539016/43853449-934e-4167-9d57-ef9281d3e8db)
+![Captura de tela de 2024-05-20 18-27-12](https://github.com/marcosgsilva/desafioangular/assets/12539016/5375a825-a411-42a8-bb9e-1e03453b2dbd)
