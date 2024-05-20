@@ -24,12 +24,6 @@ API de Back-end (Java/ Spring):
 • Retorne uma resposta apropriada para o front-end. (por exemplo, sucesso ou
 erro).
 
-
-## Instalação
-1. Clone o repositório:
-   ```sh
-   git clone https://github.com/usuario/repo.git](https://github.com/marcosgsilva/desafiospringboot.git#
-
 Página de Cadastro (Angular):
 • Crie uma página de registro de usuário com os seguintes campos:
 • Nome (obrigatório, mínimo de 3 caracteres, máximo de 50 caracteres).
@@ -41,7 +35,12 @@ Validações (Angular):
 regras especificadas acima.
 • Desabilite o botão de envio enquanto houver erros de validação
 
+## Instalação
+1. Clone o repositório:
+   ```sh
+ https://github.com/marcosgsilva/desafioangular.git](https://github.com/marcosgsilva/desafioangular.git)#
 
+Rodar dentro do projeto: npm i
   
 
 # requisitos
