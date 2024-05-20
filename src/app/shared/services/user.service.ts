@@ -11,11 +11,11 @@ export class UserService {
   httpClient = inject(HttpClient)
 
   getAll() {
-    return this.httpClient.get<User[]>('/api/usuarios');
+    return this.httpClient.get<User[]>('/api/users');
   }
 
   post(playload: UserPlayload) {
-    return this.httpClient.post('/api/usuarios', playload)
+    return this.httpClient.post('/api/users', playload)
   }
 
 }
