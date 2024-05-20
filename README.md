@@ -42,8 +42,6 @@ regras especificadas acima.
 • Desabilite o botão de envio enquanto houver erros de validação
 
 
-## Instalação
-1. Clone o repositório:
   
 
 # requisitos
@@ -52,17 +50,15 @@ regras especificadas acima.
 3. Utilizar o VSCode ou qualquer outra IDE para desenvolvimento.
 
 ## Uso
-1. Abra o terminal ou a ide e execute o docker-compose.yml, esse arquivo contem os ambientes do Postgres e adminer(Gerenciador do Postgres)
-2. Atualizar suas depedências pela ferramenta ou rode pelo terminal
+1. 
 
 ```
-   mvn clean install 
-   mvn install
+   npx ng serve
 ```
 3. Tenha o insomnia instalado na sua máquina.
-4. Para abrir o Swagger
+4. Para abrir o Navegador
  ```
-   http://localhost:8080/api/user/swagger-ui/index.html
+   http://localhost:4200
 ```
 
 
